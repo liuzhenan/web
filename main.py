@@ -1,7 +1,8 @@
 #coding:utf-8
 import os.path
 import os
-
+import base64
+from uuid import uuid4
 import tornado.locale
 import tornado.httpserver
 import tornado.ioloop
@@ -24,7 +25,8 @@ class Application(tornado.web.Application):
         settings =dict(
         template_path=os.path.join(os.getcwd(),"templates"),
         #static_path="D:/projects1/gothonweb/bin/static",
-        static_path=os.path.join(os.path.dirname(__file__),"static"),
+        #static_path=os.path.join(os.path.dirname(__file__),"templates"),
+        static_path=os.path.join(os.getcwd(),"templates"),
         cookie_secret="bZJc2sWbQLKos6GkHn/VB9oXwQt8S0R0kRvJ5/xJ89E=",
         xsrf_cookies=True,
         login_url="/login",
